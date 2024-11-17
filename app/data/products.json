@@ -1,0 +1,122 @@
+[
+  {
+    "uuid": "7381977e-cb4f-4e61-9644-74a76119faed",
+    "title": "Ramen",
+    "description": "La mejor comida del mundo",
+    "imageUrl": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS1iUOjoUgDcds9Ise1KNfqnf2gEFtT6NlVsg&s",
+    "unit": "plato",
+    "stock": 10,
+    "pricePerUnit": 80,
+    "category": "Japaneese"
+  },
+  {
+    "uuid": "e2e11066-5bab-4df5-b5f1-818f548f7cd1",
+    "title": "Pozole",
+    "description": "Rico Pozole",
+    "imageUrl": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ1lft7uEyem-hA_s6v1HH0EQ5SWdzrJ0aAtA&s",
+    "unit": "plato",
+    "stock": 15,
+    "pricePerUnit": 40,
+    "category": "Mexican"
+  },
+  {
+    "uuid": "3131e225-0107-4101-a1c6-10e9c24dc11a",
+    "title": "Sushi",
+    "description": "Mucho pescado",
+    "imageUrl": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR6lZ64qr8GTkQdz1I8-ezZfSBuR9b5iKdsAQ&s",
+    "unit": "pedazos",
+    "stock": 50,
+    "pricePerUnit": 10,
+    "category": "Japaneese"
+  },
+  {
+    "uuid": "8e108b5d-37cc-401a-a409-dd82d168cff6",
+    "title": "Pasta",
+    "description": "Pasta Italiana",
+    "imageUrl": "https://media.traveler.es/photos/635641fa93bb785c9cec6bc0/master/w_1600%2Cc_limit/iStock-479271670.jpg",
+    "unit": "plato",
+    "stock": 40,
+    "pricePerUnit": 15,
+    "category": "Italian"
+  },
+  {
+    "uuid": "c38a2b7e-61f1-4478-9e6a-afbb6b14b2e3",
+    "title": "Tlayuda",
+    "description": "Pizza mejorada",
+    "imageUrl": "https://www.elsoldemexico.com.mx/incoming/ayh193-img_8339.jpg/ALTERNATES/LANDSCAPE_960/IMG_8339.jpg",
+    "unit": "plato",
+    "stock": 27,
+    "pricePerUnit": 32,
+    "category": "Mexican"
+  },
+  {
+    "uuid": "d2197a92-fd02-452a-82d9-af72aaf85372",
+    "title": "Piza de Piña",
+    "description": "El mejor sabor de pizza",
+    "imageUrl": "https://redbakery.cl/wp-content/uploads/2024/07/1533.jpg",
+    "unit": "plato",
+    "stock": 1007,
+    "pricePerUnit": 150,
+    "category": "Italian"
+  },
+  {
+    "uuid": "21d49ad4-5708-438a-98a4-84224bd3545b",
+    "title": "Piza de pepeloni",
+    "description": "El peor sabor de pizza",
+    "imageUrl": "https://worldlytreat.com/wp-content/uploads/2021/05/Italian-pepperoni-pizza-recipe-060-scaled.jpg",
+    "unit": "plato",
+    "stock": 12,
+    "pricePerUnit": 17,
+    "category": "Italian"
+  },
+  {
+    "uuid": "b257b3b6-907f-4c23-9483-1b663c971e73",
+    "title": "Onigiri",
+    "description": "Arroz en forma rara",
+    "imageUrl": "https://www.spiritjapan.com/cdn/shop/articles/241695756_3008948676009057_2216945854287643878_n_1024x1024.jpg?v=1632053090",
+    "unit": "plato",
+    "stock": 57,
+    "pricePerUnit": 47,
+    "category": "Japaneese"
+  },
+  {
+    "uuid": "29836721-1b26-4ca2-ae67-691cbe595d7c",
+    "title": "Cemita",
+    "description": "pinche lonche bien rico",
+    "imageUrl": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT390tUFkGtHtTQwrHaiSn0GqrENVFS6_oDbw&s",
+    "unit": "plato",
+    "stock": 97,
+    "pricePerUnit": 32,
+    "category": "Mexican"
+  },
+  {
+    "uuid": "2f84ce0b-9e0a-4cd6-a29d-48075c5d5651",
+    "title": "Chilakiles",
+    "description": "shilakiles lojos o veldes",
+    "imageUrl": "https://i.ytimg.com/vi/se1daz9UXJ0/maxresdefault.jpg",
+    "unit": "plato",
+    "stock": 2,
+    "pricePerUnit": 40,
+    "category": "Mexican"
+  },
+  {
+    "uuid": "16082712-38c8-4f1b-9f8c-7a153d6252a8",
+    "title": "Tempura",
+    "description": "chicken nuggis pero que no saben a cancer",
+    "imageUrl": "https://www.sushilab.cl/wp-content/uploads/2023/05/BLOG.jpg",
+    "unit": "pedazo",
+    "stock": 36,
+    "pricePerUnit": 13,
+    "category": "Japanese"
+  },
+  {
+    "uuid": "7d9ca900-e25e-4cb8-b8f8-cb4a0d26b2f9",
+    "title": "Tiramisu",
+    "description": "lit el postre mas rico",
+    "imageUrl": "https://images.ctfassets.net/0e6jqcgsrcye/4n65BLblai3S8LPjwpHKMm/b31817cdecfe982fe798642d1c12d525/tiramisu_thumbnail.jpg",
+    "unit": "plato",
+    "stock": 456,
+    "pricePerUnit": 2,
+    "category": "Italian"
+  }
+]

@@ -1,0 +1,343 @@
+### PRUEBA 1: GET empty products array
+GET http://localhost:3000/products
+
+### PRUEBA 1.1: GET size of products
+GET http://localhost:3000/products/size
+
+### PRUEBA 1.1: GET num 2 to 4 of products
+GET http://localhost:3000/products?range=2:4
+
+### PRUEBA 2: admin POST withouth auth
+POST http://localhost:3000/admin/products
+content-type: application/json
+
+{
+	"x-auth": "hacker",
+	"product": {
+		"title": "Tlayuda",
+		"description": "Pizza mejorada",
+		"imageUrl": "https://www.elsoldemexico.com.mx/incoming/ayh193-img_8339.jpg/ALTERNATES/LANDSCAPE_960/IMG_8339.jpg",
+		"unit": "plato",
+		"stock": 27,
+		"pricePerUnit": 32,
+		"category": "Mexican"
+	}
+}
+
+### PRUEBA 3.0: admin POST product 1
+POST http://localhost:3000/admin/products
+content-type: application/json
+
+{
+	"x-auth": "admin",
+	"product": {
+		"uuid": "7381977e-cb4f-4e61-9644-74a76119faed",
+		"title": "Ramen",
+		"description": "La mejor comida del mundo",
+		"imageUrl": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS1iUOjoUgDcds9Ise1KNfqnf2gEFtT6NlVsg&s",
+		"unit": "plato",
+		"stock": 10,
+		"pricePerUnit": 80,
+		"category": "Japaneese"
+	}
+}
+
+### PRUEBA 3.1: admin POST product 2
+POST http://localhost:3000/admin/products
+content-type: application/json
+
+{
+	"x-auth": "admin",
+	"product": {
+		"uuid": "e2e11066-5bab-4df5-b5f1-818f548f7cd1",
+		"title": "Pozole",
+		"description": "Rico Pozole",
+		"imageUrl": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ1lft7uEyem-hA_s6v1HH0EQ5SWdzrJ0aAtA&s",
+		"unit": "plato",
+		"stock": 15,
+		"pricePerUnit": 40,
+		"category": "Mexican"
+	}
+}
+
+### PRUEBA 3.2: admin POST product 3
+POST http://localhost:3000/admin/products
+content-type: application/json
+
+{
+	"x-auth": "admin",
+	"product": {
+		"uuid": "3131e225-0107-4101-a1c6-10e9c24dc11a",
+		"title": "Sushi",
+		"description": "Mucho pescado",
+		"imageUrl": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR6lZ64qr8GTkQdz1I8-ezZfSBuR9b5iKdsAQ&s",
+		"unit": "pedazos",
+		"stock": 50,
+		"pricePerUnit": 10,
+		"category": "Japaneese"
+	}
+}
+
+### PRUEBA 3.3: admin POST product 4
+POST http://localhost:3000/admin/products
+content-type: application/json
+
+{
+	"x-auth": "admin",
+	"product": {
+		"uuid": "8e108b5d-37cc-401a-a409-dd82d168cff6",
+		"title": "Pasta",
+		"description": "Pasta Italiana",
+		"imageUrl": "https://media.traveler.es/photos/635641fa93bb785c9cec6bc0/master/w_1600%2Cc_limit/iStock-479271670.jpg",
+		"unit": "plato",
+		"stock": 40,
+		"pricePerUnit": 15,
+		"category": "Italian"
+	}
+}
+
+### PRUEBA 3.4: admin POST product 5
+POST http://localhost:3000/admin/products
+content-type: application/json
+
+{
+	"x-auth": "admin",
+	"product": {
+		"uuid": "c38a2b7e-61f1-4478-9e6a-afbb6b14b2e3",
+		"title": "Tlayuda",
+		"description": "Pizza mejorada",
+		"imageUrl": "https://www.elsoldemexico.com.mx/incoming/ayh193-img_8339.jpg/ALTERNATES/LANDSCAPE_960/IMG_8339.jpg",
+		"unit": "plato",
+		"stock": 27,
+		"pricePerUnit": 32,
+		"category": "Mexican"
+	}
+}
+
+### PRUEBA 3.5: admin POST product 6
+POST http://localhost:3000/admin/products
+content-type: application/json
+
+{
+	"x-auth": "admin",
+	"product": {
+		"title": "Piza de Piña",
+		"description": "El mejor sabor de pizza",
+		"imageUrl": "https://redbakery.cl/wp-content/uploads/2024/07/1533.jpg",
+		"unit": "plato",
+		"stock": 1007,
+		"pricePerUnit": 150,
+		"category": "Italian"
+	}
+}
+
+### PRUEBA 3.6: admin POST product 7
+POST http://localhost:3000/admin/products
+content-type: application/json
+
+{
+	"x-auth": "admin",
+	"product": {
+		"title": "Piza de pepeloni",
+		"description": "El peor sabor de pizza",
+		"imageUrl": "https://worldlytreat.com/wp-content/uploads/2021/05/Italian-pepperoni-pizza-recipe-060-scaled.jpg",
+		"unit": "plato",
+		"stock": 12,
+		"pricePerUnit": 17,
+		"category": "Italian"
+	}
+}
+
+### PRUEBA 3.7: admin POST product 8
+POST http://localhost:3000/admin/products
+content-type: application/json
+
+{
+	"x-auth": "admin",
+	"product": {
+		"title": "Onigiri",
+		"description": "Arroz en forma rara",
+		"imageUrl": "https://www.spiritjapan.com/cdn/shop/articles/241695756_3008948676009057_2216945854287643878_n_1024x1024.jpg?v=1632053090",
+		"unit": "plato",
+		"stock": 57,
+		"pricePerUnit": 47,
+		"category": "Japaneese"
+	}
+}
+
+### PRUEBA 3.8: admin POST product 9
+POST http://localhost:3000/admin/products
+content-type: application/json
+
+{
+	"x-auth": "admin",
+	"product": {
+		"title": "Cemita",
+		"description": "pinche lonche bien rico",
+		"imageUrl": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT390tUFkGtHtTQwrHaiSn0GqrENVFS6_oDbw&s",
+		"unit": "plato",
+		"stock": 97,
+		"pricePerUnit": 32,
+		"category": "Mexican"
+	}
+}
+
+### PRUEBA 3.9: admin POST product 10
+POST http://localhost:3000/admin/products
+content-type: application/json
+
+{
+	"x-auth": "admin",
+	"product": {
+		"title": "Chilakiles",
+		"description": "shilakiles lojos o veldes",
+		"imageUrl": "https://i.ytimg.com/vi/se1daz9UXJ0/maxresdefault.jpg",
+		"unit": "plato",
+		"stock": 2,
+		"pricePerUnit": 40,
+		"category": "Mexican"
+	}
+}
+
+### PRUEBA 3.10: admin POST product 11
+POST http://localhost:3000/admin/products
+content-type: application/json
+
+{
+	"x-auth": "admin",
+	"product": {
+		"title": "Tempura",
+		"description": "chicken nuggis pero que no saben a cancer",
+		"imageUrl": "https://www.sushilab.cl/wp-content/uploads/2023/05/BLOG.jpg",
+		"unit": "pedazo",
+		"stock": 36,
+		"pricePerUnit": 13,
+		"category": "Japanese"
+	}
+}
+
+### PRUEBA 3.10: admin POST product 11
+POST http://localhost:3000/admin/products
+content-type: application/json
+
+{
+	"x-auth": "admin",
+	"product": {
+		"title": "Tiramisu",
+		"description": "lit el postre mas rico",
+		"imageUrl": "https://images.ctfassets.net/0e6jqcgsrcye/4n65BLblai3S8LPjwpHKMm/b31817cdecfe982fe798642d1c12d525/tiramisu_thumbnail.jpg",
+		"unit": "plato",
+		"stock": 456,
+		"pricePerUnit": 2,
+		"category": "Italian"
+	}
+}
+
+### PRUEBA 4: fail to DELETE pozole
+DELETE  http://localhost:3000/admin/products/e2e11066-5bab-4df5-b5f1-818f548f7cd1
+content-type: application/json
+
+{
+	"x-auth": "hacker"
+}
+
+### PRUEBA 4: DELETE pozole
+DELETE  http://localhost:3000/admin/products/e2e11066-5bab-4df5-b5f1-818f548f7cd1
+content-type: application/json
+
+{
+	"x-auth": "admin"
+}
+
+### PRUEBA 5: GET pasta with id
+GET http://localhost:3000/products/8e108b5d-37cc-401a-a409-dd82d168cff6
+
+
+### PRUEBA 6: GET mexican tlayuda with query
+GET http://localhost:3000/products?queryStr=Italian:
+
+### PRUEBA 7.0: product PUT withouth auth
+PUT http://localhost:3000/admin/products/3131e225-0107-4101-a1c6-10e9c24dc11a
+content-type: application/json
+
+{
+	"x-auth": "hacker",
+	"product": {
+		"uuid": "",
+		"title": "Sushi",
+		"description": "Mucho pescado",
+		"imageUrl": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR6lZ64qr8GTkQdz1I8-ezZfSBuR9b5iKdsAQ&s",
+		"unit": "pedazos",
+		"stock": 50,
+		"pricePerUnit": 10,
+		"category": "Japaneese"
+	}
+}
+
+### PRUEBA 7.1: update unexisting product
+PUT http://localhost:3000/admin/products/invalidUUID
+content-type: application/json
+
+{
+	"x-auth": "admin",
+	"product": {
+		"title": "Sushi",
+		"description": "Mucho pescado",
+		"imageUrl": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR6lZ64qr8GTkQdz1I8-ezZfSBuR9b5iKdsAQ&s",
+		"unit": "pedazos",
+		"stock": 50,
+		"pricePerUnit": 10,
+		"category": "Japaneese"
+	}
+}
+
+### PRUEBA 7.2: update Japaneese to Japanese
+PUT http://localhost:3000/admin/products/7381977e-cb4f-4e61-9644-74a76119faed
+content-type: application/json
+
+{
+	"x-auth": "admin",
+	"product": {
+		//"title": "SHOKOMILK",
+		//"description": "Mucho pescado",
+		//"imageUrl": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR6lZ64qr8GTkQdz1I8-ezZfSBuR9b5iKdsAQ&s",
+		//"unit": "pedazos",
+		//"stock": 50,
+		//"pricePerUnit": 10,
+		"category": "Japanese"
+	}
+}
+
+### PRUEBA 8: GET products first version
+GET http://localhost:3000/products
+
+### PRUEBA 9: Shopping cart add 3 products
+POST http://localhost:3000/products/cart
+content-type: application/json
+
+[
+	{
+		"id": "7381977e-cb4f-4e61-9644-74a76119faed",
+		"amount": 5
+	},
+	{
+		"id": "3131e225-0107-4101-a1c6-10e9c24dc11a",
+		"amount": 7
+	},
+	{
+		"id": "8e108b5d-37cc-401a-a409-dd82d168cff6",
+		"amount": 13
+	}
+]
+
+### PRUEBA 10: Shopping cart with 1 invalid product
+POST http://localhost:3000/products/cart
+content-type: application/json
+
+[
+	{
+		"id": "non existent",
+		"amount": 3
+	}
+]
+
