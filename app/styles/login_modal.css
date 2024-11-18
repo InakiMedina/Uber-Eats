@@ -1,11 +1,28 @@
+#login_form{
+	background-color: rgba(22, 22, 26, 0.18);
+}
+
+#login_form input,
+#login_form button{
+	padding: 5px;
+	border-radius: 5px;
+}
+
 .modal-content {
+	border-radius: 50%;
 	width: 80%;
 	margin: 0 auto;
   }
   .modal-body {
+	
 	padding: 0;
+	box-shadow: 12px 12px 12px 0px rgba(0, 0, 0, 0.45);
+	border-radius: 10px;
+	overflow: hidden;
+
   }
   .btn-close {
+	
 	position: absolute;
 	right: 0;
 	padding: 1em;

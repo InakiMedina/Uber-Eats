@@ -8,32 +8,20 @@
 		crossorigin="anonymous"
 		defer/>
 		<link rel="stylesheet" href="../styles/login_modal.css" />
+		<link rel="stylesheet" href="../styles/bubbles.css" />
+		<link rel="stylesheet" href="../styles/modal_animation.css" />
+		<link rel="stylesheet" href="../styles/login.css" />
+		<script type="text/javascript" src="../scripts/login.js" defer></script>
 	</head>
 	<body>
-		login html
-		<dialog id='dDiag'>
-			<span>The dialog</span>
-		</dialog>
-		<button onClick='showDialog()'>Show dialog</button>
-		<div class="modal fade" id="login_form" aria-labelledby="ModalFormLabel">
-			<div class="modal-dialog modal-dialog-centered">
-				<div class="modal-content">
-					login example
+		<div id="background">	
+		</div>
+		<div class="modal show-modal" id="login_form" style="display: block;" tabindex="-1" aria-labelledby="login modal" aria-hidden="true">
+				<div class="modal-dialog modal-dialog-centered">
+					<div class="modal-content">
+						login content
+					</div>
 				</div>
 			</div>
-		</div>
-		<div>
-			<a
-				href = "login_modal.html"
-				data-toggle="modal"
-				data-target="#login_form">
-				<button>open modal</button>
-			</a>
-		</div>
 	</body>
-	<script>
-		function showDialog() {
-			dDiag.showModal();
-		}
-	</script>
 </html>

@@ -1,0 +1,2 @@
+### Get background of bubbles
+GET http://localhost:3000/background/bubbles
