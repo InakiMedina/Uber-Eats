@@ -17,7 +17,7 @@ addEventListener("load", (event) => {
 
 	//load bubbles background	
 	var xhr2 = new XMLHttpRequest()
-	xhr2.open('GET', "http://localhost:3000/background/bubbles")
+	xhr2.open('GET', "http://localhost:3000/widgets/backgrounds/bubbles")
 	xhr2.send()
 	xhr2.onload = function() {
 		if (xhr2.status != 200)
@@ -32,19 +32,3 @@ function openLoginModal() {
 	login_dialog.showModal()
 }
 
-// window.addEventListener("load", (event) => {
-// 	var xml = new XMLHttpRequest();
-// 	var items = []
-// 	xml.open('GET', "http://localhost:3000/products/size")
-// 	xml.send()
-// 	xml.onload = function() {
-// 		if (xml.status != 200)
-// 			alert(xml.status + ": " + xml.statusText)
-// 		else {		
-// 			totalItems = JSON.parse(xml.responseText).size
-// 			totalPages = Math.ceil(totalItems / itemsPerPage);
-// 			createPageButtons()
-// 			showPage()
-// 		}
-// 	}
-// })
