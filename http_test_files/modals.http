@@ -1,2 +1,2 @@
 ### Get login Modal
-GET http://localhost:3000/login/modal
+GET http://localhost:3000/account/login/modal

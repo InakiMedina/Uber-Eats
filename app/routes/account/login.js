@@ -9,9 +9,9 @@ router.use(cors())
 
 
 
-router.get('/', (req, res) => res.sendFile(path.resolve(__dirname + "/../views/login.html")))
+router.get('/', (req, res) => res.sendFile(path.resolve(__dirname + "../../../views/login.html")))
 
-router.get('/modal', (req, res) => res.sendFile(path.resolve(__dirname + "/../views/login_modal.html")))
+router.get('/modal', (req, res) => res.sendFile(path.resolve(__dirname + "../../../views/login_modal.html")))
 
 module.exports = router;
 

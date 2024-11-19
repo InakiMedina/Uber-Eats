@@ -37,6 +37,7 @@ router.use('/widgets', widgetsRoutes)
 router.get('/', (req, res) => res.sendFile(path.resolve(__dirname + "/../views/home.html")))
 router.get('/home', (req, res) => res.sendFile(path.resolve(__dirname + "/../views/home.html")))
 router.get('/shopping_cart', (req, res) => res.sendFile(path.resolve(__dirname + "/../views/shopping_cart.html")))
+router.get('/packages', (req, res) => res.sendFile(path.resolve(__dirname + "/../views/packages.html")))
 
 module.exports = router
 

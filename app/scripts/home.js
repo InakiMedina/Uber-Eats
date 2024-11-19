@@ -23,17 +23,7 @@ window.addEventListener("load", (event) => {
 		}
 	}
 
-	var xtr2 = new XMLHttpRequest();
-	var items = []
-	xtr2.open('GET', "http://localhost:3000/widgets/navbars/client")
-	xtr2.send()
-	xtr2.onload = function() {
-		if (xtr2.status != 200)
-			alert(xtr2.status + ": " + xtr2.statusText)
-		else {		
-			navbar.innerHTML = xtr2.responseText
-		}
-	}
+	
 })
 
 async function addProxyToCart() {
