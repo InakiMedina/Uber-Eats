@@ -1,0 +1,75 @@
+<html>
+	<head>
+		<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+		/>
+		<link rel="stylesheet" href="../styles/profile.css" />
+		<script type="text/javascript" src="../scripts/profile.js" defer></script>
+	</head>
+	<body>
+		<div class="card">
+            <div class="card-body pb-0">
+                <div class="row align-items-center">
+                    <div class="col-md-3">
+                        <div class="text-center border-end">
+                            <img src="https://m.media-amazon.com/images/S/pv-target-images/3c5e1c7190101b4e415ed9e4585d8a016cff33ab944594d21b61e217f57c7a49._SX1080_FMjpg_.jpg" class="img-fluid avatar-xxl rounded-circle" alt="">
+                            <h4 class="text-primary font-size-20 mt-3 mb-2">persona 5</h4>
+                        </div>
+                    </div><!-- end col -->
+                    <div class="col-md-9">
+                        <div class="ms-3">                  
+							<div class="carousel slide" data-bs-ride="carousel"	id="profile_carousel" data-ride="carousel">
+								<div class="carousel-inner" id="car_in">
+									<div class="carousel-item active">
+										<div class="mb-3">
+											<label for="usernameInput" class="form-label">Username</label>
+											<input type="text" id="usernameInput" class="form-control" placeholder="Joker" disabled>
+										</div>
+										<div class="mb-3">
+											<label for="emailInput" class="form-label">Email</label>
+											<input type="email" id="emailInput" class="form-control" placeholder="Is_that_@_persona.reference?" disabled>
+										</div>
+									</div>
+									<div class="carousel-item">
+										<div class="mb-3">
+											<label for="usernameInput" class="form-label">Adress</label>
+											<input type="text" id="usernameInput" class="form-control" placeholder="lives in a reference" disabled>
+										</div>
+									</div>
+									<div class="carousel-item">
+										<div class="mb-3">
+											<label for="usernameInput" class="form-label">CreditCard</label>
+											<input type="text" id="usernameInput" class="form-control" placeholder="some number hidden" disabled>
+										</div>
+									</div>
+								</div>
+                            </div>		
+							<ul class="nav nav-tabs nav-tabs-custom border-bottom-0 mt-3 nav-justfied" role="tablist">
+								<li class="nav-item" role="presentation">
+									<button class="nav-link px-4 active" id="account" onClick="toogleToAccount()" role="tab" aria-selected="false" tabindex="-1">
+										<span class="d-block d-sm-none"><i class="fas fa-home"></i></span>
+										<span class="d-none d-sm-block">Account</span>
+									</button>
+								</li><!-- end li -->
+								<li class="nav-item" role="presentation">
+									<button class="nav-link px-4" id="address" onClick="toogleToAddress()" role="tab" aria-selected="false" tabindex="-1">
+										<span class="d-block d-sm-none"><i class="mdi mdi-menu-open"></i></span>
+										<span class="d-none d-sm-block">Address</span>
+									</button>
+								</li><!-- end li -->
+								<li class="nav-item" role="presentation">
+									<button class="nav-link px-4" id="bank_info" onClick="toogleToBankInfo()" target="__blank">
+										<span class="d-block d-sm-none"><i class="mdi mdi-account-group-outline"></i></span>
+										<span class="d-none d-sm-block">Bank Info</span>
+									</button>
+								</li><!-- end li -->
+							</ul><!-- end ul -->
+                        </div>
+                    </div><!-- end col -->
+                </div><!-- end row -->
+            </div><!-- end card body -->
+        </div><!-- end card -->
+	</body>
+</html>

@@ -1,0 +1,43 @@
+body{
+	margin-top:20px;
+	background:#f7f8fa
+ }
+ 
+ .avatar-xxl {
+	 height: 7rem;
+	 width: 7rem;
+ }
+ 
+ .card {
+	 margin-bottom: 20px;
+	 -webkit-box-shadow: 0 2px 3px #eaedf2;
+	 box-shadow: 0 2px 3px #eaedf2;
+ }
+ 
+ .pb-0 {
+	 padding-bottom: 0!important;
+ }
+ 
+ .font-size-16 {
+	 font-size: 16px!important;
+ }
+ .avatar-title {
+	 -webkit-box-align: center;
+	 -ms-flex-align: center;
+	 align-items: center;
+	 background-color: #038edc;
+	 color: #fff;
+	 display: -webkit-box;
+	 display: -ms-flexbox;
+	 display: flex;
+	 font-weight: 500;
+	 height: 100%;
+	 -webkit-box-pack: center;
+	 -ms-flex-pack: center;
+	 justify-content: center;
+	 width: 100%;
+ }
+
+ /* .form_label {
+	aria-disabled="disabled"
+ } */

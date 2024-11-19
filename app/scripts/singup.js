@@ -6,7 +6,7 @@ let activeStepIndex = 0;
 var xhr = new XMLHttpRequest()
 
 //load login modal
-xhr.open('GET', "http://localhost:3000/singup/modal")
+xhr.open('GET', "http://localhost:3000/account/singup/modal")
 var modal_content = singup_form.firstElementChild.firstElementChild
 xhr.send()
 xhr.onload = function() {

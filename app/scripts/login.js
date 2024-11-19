@@ -4,7 +4,7 @@ addEventListener("load", (event) => {
 	var xhr = new XMLHttpRequest()
 
 	//load login modal
-	xhr.open('GET', "http://localhost:3000/login/modal")
+	xhr.open('GET', "http://localhost:3000/account/login/modal")
 	var modal_content = login_form.firstElementChild.firstElementChild
 	xhr.send()
 	xhr.onload = function() {

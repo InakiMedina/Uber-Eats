@@ -1,0 +1,2 @@
+### get navbar client
+GET http://localhost:3000/widgets/navbars/client
