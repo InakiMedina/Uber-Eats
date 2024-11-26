@@ -24,3 +24,15 @@ content-type: application/json
 	"email": "random@ass.email",
 	"password": "password"
 }
+
+### Get token
+GET http://localhost:3000/api/token
+
+
+### Store token
+POST http://localhost:3000/api/token
+content-type: application/json
+
+{
+	"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InJhbmRvbUBhc3MuZW1haWwiLCJ1c2VybmFtZSI6IlJhbmRvbUFzc1VzZXIiLCJyb2xlIjoidXNlciIsImlhdCI6MTczMjY0MjA2OX0.nlTm83UEoTtjSIscUl1ndtYXl--GcAXjMMhFRJZwBrg"
+}

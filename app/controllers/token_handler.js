@@ -4,21 +4,25 @@ const mongoose = require('mongoose')
 
 class TokenHandler {
 
-	static async _loadToken() {
-		this._token = JSON.parse(await fs.readFileSync('./app/data/token.json'))
+	static _loadToken() {
+		this._token = JSON.parse(fs.readFileSync('./app/data/token.json'))
 	}
-	static async _storeToken() {
-		await fs.writeFileSync('./app/data/token.json', JSON.stringify(this._token))
-	}
-
-	static async getToken() {
-		return await _loadToken()
+	static _storeToken() {
+		fs.writeFileSync('./app/data/token.json', JSON.stringify(this._token))
+		
 	}
 
-	static async setToken(token) {
-		await this._storeToken(token)
+	static getToken() {
+		this._loadToken()
+		return this._token
+	}
+
+	static setToken(token) {
+		this._token =token 
+		this._storeToken()
+		return
 	}
 
 }
 
-module.exports = TokenHandler
+module.exports = { TokenHandler }

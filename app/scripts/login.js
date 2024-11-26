@@ -53,10 +53,10 @@ function checkEmptysubForm(){
 
 function storeToken(token) {
 	var xhr4 = new XMLHttpRequest()
-	//load login modal
+	let inputToken = {"token": token.inputToken}
 	xhr4.open('POST', "http://localhost:3000/api/token")
 	xhr4.setRequestHeader("content-type", "application/json")
-	xhr4.send(token)
+	xhr4.send(JSON.stringify(inputToken))
 	xhr4.onload = function() {
 		if (xhr4.status != 200)
 			alert("token wasn't able to store")
@@ -71,11 +71,10 @@ function storeToken(token) {
 function loginUser(){
 	var xhr3 = new XMLHttpRequest()
 	let loginData = {"email": email_form.value, "password": pass_form.value}
-	console.log(loginData)
 	//load login modal
 	xhr3.open('POST', "http://localhost:3000/api/users/login")
 	xhr3.setRequestHeader("Content-Type", "application/json")
-	xhr3.send(loginData)
+	xhr3.send(JSON.stringify(loginData))
 	xhr3.onload = function() {
 		if (xhr3.status != 201)
 			err_msg.innerHTML = "wrong login info"

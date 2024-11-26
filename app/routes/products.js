@@ -33,9 +33,6 @@ router.get('/:id', async (req, res) => {
 	res.send((await ProductHandler.getProductById(req.params.id)).toJson())
 })
 
-
-
-
 router.post('/cart', async (req, res) => {
 	if (!Array.isArray(req.body))
 		return res.status(400).send("cart body is not an array")

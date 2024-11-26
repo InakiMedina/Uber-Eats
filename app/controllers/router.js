@@ -36,7 +36,7 @@ router.use(bodyParser.json());
 router.use('/api/products', productRouter)
 router.use('/api/admin/products', validateAdmin, adminProductRouter)
 router.use('/api/users', usersRouter)
-router.use('/api/tokens', tokenRouter)
+router.use('/api/token', tokenRouter)
 
 router.use('/widgets', widgetsRoutes)
 router.use('/login', loginRoutes)
@@ -49,6 +49,3 @@ router.get('/shopping_cart', (req, res) => res.sendFile(path.resolve(__dirname +
 router.get('/packages', (req, res) => res.sendFile(path.resolve(__dirname + "/../views/packages.html")))
 
 module.exports = router
-
-
-

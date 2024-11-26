@@ -25,7 +25,6 @@ router.get('/:id', async (req, res) => {
 const jwt = require('jsonwebtoken')
 
 router.post('/login', async (req, res) => {
-	console.log("hello world")
 	if (!req.body.email) {
 		console.log("no email", req.body.email)
 		return res.sendStatus(400);

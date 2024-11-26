@@ -4,21 +4,24 @@ const express = require('express')
 
 const router = express.Router()
 
-const { TH } = require('../controllers/token_handler')
-const { isTypedArray } = require('util/types')
+const { TokenHandler } = require('../controllers/token_handler')
 
 router.use(cors())
 
 router.get('/', async (req, res) => {
 	
-	token = await TH.getToken()
+	let token = await TokenHandler.getToken()
 	
-	return res.send(token) 
+	return res.status(200).send(token) 
 	
 })
 
 router.post('/', async (req, res) => {
-	
+	if (!req.body.token) 
+		return res.sendStatus(400)
+	console.log(JSON.stringify(req.body))
+	await TokenHandler.setToken(req.body)
+	return res.sendStatus(200)
 })
 
-module.exports = router;
+module.exports = router
