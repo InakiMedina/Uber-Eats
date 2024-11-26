@@ -1,94 +1,144 @@
 <html>
-	<head>
-		<link
-			href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
-			rel="stylesheet"
-			integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
-			crossorigin="anonymous"
-		/>
-		<script type="text/javascript" src="../scripts/navbar.js" defer></script>
-		<script src="https://kit.fontawesome.com/0b85ae3fb7.js"
-			crossorigin="anonymous"
-		></script>
-		<link  href="../styles/package.css" rel="stylesheet"/>
-	</head>
-	<body>
-		<div id="navbar">
-		</div>
-		<div class="container">
-			<div class="row">
-				<div class="col-12 mb-3 mb-lg-5">
-					<div class="overflow-hidden card table-nowrap table-card">
-						<div class="card-header d-flex justify-content-between align-items-center">
-							<h5 class="mb-0">Packages</h5>
-						</div>
-						<div class="table-responsive">
-                    <table class="table mb-0">
-                        <thead class="small text-uppercase bg-body text-muted">
-                            <tr>
-                                <th>Number</th>
-                                <th>Created Date</th>
-                                <th>Status</th>
-                                <th>Delivery Date</th>
-                                <th>Driver</th>
-                                <th class="text-end">Action</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-							 <tr class="align-middle">
-                                <td>
-                                    <div class="d-flex align-items-center">
-                                        <img src="/assets/images/package.png" width="50" class="sm rounded-pill me-3 flex-shrink-0" alt="Package Logo">
-                                        <div>
-                                            <div class="h6 mb-0 lh-1">Package 1</div>
-                                        </div>
-                                    </div>
-                                </td>
-                                <td>21 Sep, 2021</td>
-                                <td> <span class="d-inline-block align-middle">On its way</span></td>
-                                <td>21 Sep, 2027</td>
-                                <td><span>Inmortal Snail</span></td>
-                                <td class="text-end">
-                                    <div class="drodown">
-                                        <a data-bs-toggle="dropdown" href="#" class="btn p-1" aria-expanded="false">
-                                  <i class="fa fa-bars" aria-hidden="true"></i>
-                                </a>
-                                        <div class="dropdown-menu dropdown-menu-end" style="">
-                                            <a href="#!" class="dropdown-item">View Details</a>
-                                            <a href="#!" class="dropdown-item">Cancel Package</a>
-                                        </div>
-                                    </div>
-                                </td>
-                            </tr>
-							<tr class="align-middle">
-                                <td>
-                                    <div class="d-flex align-items-center">
-                                        <img src="/assets/images/package.png" width="50" class="sm rounded-pill me-3 flex-shrink-0" alt="Package Logo">
-                                        <div>
-                                            <div class="h6 mb-0 lh-1">Package 2</div>
-                                        </div>
-                                    </div>
-                                </td>
-                                <td>19 Nov, 2024</td>
-                                <td> <span class="d-inline-block align-middle">In the kitchen</span></td>
-                                <td>none</td>
-                                <td><span>none</span></td>
-                                <td class="text-end">
-                                    <div class="drodown">
-                                        <a data-bs-toggle="dropdown" href="#" class="btn p-1" aria-expanded="false">
-                                  <i class="fa fa-bars" aria-hidden="true"></i>
-                                </a>
-                                        <div class="dropdown-menu dropdown-menu-end" style="">
-                                            <a href="#!" class="dropdown-item">View Details</a>
-                                            <a href="#!" class="dropdown-item">Cancel Package</a>
-                                        </div>
-                                    </div>
-                                </td>
-                            </tr>
-						</tbody>
-					</table>
-				</div>
-			</div>
-		</div>
-	</body>
+  <head>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://kit.fontawesome.com/0b85ae3fb7.js"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+      crossorigin="anonymous"
+      defer
+    ></script>
+    <script
+      src="https://kit.fontawesome.com/0b85ae3fb7.js"
+      crossorigin="anonymous"
+    ></script>
+
+    <link href="../styles/package.css" rel="stylesheet" />
+    <link rel="stylesheet" href="../styles/home.css" />
+    <link rel="stylesheet" href="../styles/client_navbar.css" />
+
+    <script type="text/javascript" src="../scripts/storage.js" defer></script>
+    <script type="text/javascript" src="../scripts/shopping_cart.js" defer></script>
+    <script type="text/javascript" src="../scripts/navbar.js" defer></script>
+
+
+  </head>
+  <body>
+    <div id="navbar"></div>
+    <div class="container">
+      <div class="row">
+        <div class="col-12 mb-3 mb-lg-5">
+          <div class="overflow-hidden card table-nowrap table-card">
+            <div
+              class="card-header d-flex justify-content-between align-items-center"
+            >
+              <h5 class="mb-0">Packages</h5>
+            </div>
+            <div class="table-responsive">
+              <table class="table mb-0">
+                <thead class="small text-uppercase bg-body text-muted">
+                  <tr>
+                    <th>Number</th>
+                    <th>Created Date</th>
+                    <th>Status</th>
+                    <th>Delivery Date</th>
+                    <th>Driver</th>
+                    <th class="text-end">Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr class="align-middle">
+                    <td>
+                      <div class="d-flex align-items-center">
+                        <img
+                          src="/assets/images/package.png"
+                          width="50"
+                          class="sm rounded-pill me-3 flex-shrink-0"
+                          alt="Package Logo"
+                        />
+                        <div>
+                          <div class="h6 mb-0 lh-1">Package 1</div>
+                        </div>
+                      </div>
+                    </td>
+                    <td>21 Sep, 2021</td>
+                    <td>
+                      <span class="d-inline-block align-middle"
+                        >On its way</span
+                      >
+                    </td>
+                    <td>21 Sep, 2027</td>
+                    <td><span>Inmortal Snail</span></td>
+                    <td class="text-end">
+                      <div class="drodown">
+                        <a
+                          data-bs-toggle="dropdown"
+                          href="#"
+                          class="btn p-1"
+                          aria-expanded="false"
+                        >
+                          <i class="fa fa-bars" aria-hidden="true"></i>
+                        </a>
+                        <div class="dropdown-menu dropdown-menu-end" style="">
+                          <a href="#!" class="dropdown-item">View Details</a>
+                          <a href="#!" class="dropdown-item">Cancel Package</a>
+                        </div>
+                      </div>
+                    </td>
+                  </tr>
+                  <tr class="align-middle">
+                    <td>
+                      <div class="d-flex align-items-center">
+                        <img
+                          src="/assets/images/package.png"
+                          width="50"
+                          class="sm rounded-pill me-3 flex-shrink-0"
+                          alt="Package Logo"
+                        />
+                        <div>
+                          <div class="h6 mb-0 lh-1">Package 2</div>
+                        </div>
+                      </div>
+                    </td>
+                    <td>19 Nov, 2024</td>
+                    <td>
+                      <span class="d-inline-block align-middle"
+                        >In the kitchen</span
+                      >
+                    </td>
+                    <td>none</td>
+                    <td><span>none</span></td>
+                    <td class="text-end">
+                      <div class="drodown">
+                        <a
+                          data-bs-toggle="dropdown"
+                          href="#"
+                          class="btn p-1"
+                          aria-expanded="false"
+                        >
+                          <i class="fa fa-bars" aria-hidden="true"></i>
+                        </a>
+                        <div class="dropdown-menu dropdown-menu-end" style="">
+                          <a href="#!" class="dropdown-item">View Details</a>
+                          <a href="#!" class="dropdown-item">Cancel Package</a>
+                        </div>
+                      </div>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
 </html>

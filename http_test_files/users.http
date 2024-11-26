@@ -1,0 +1,26 @@
+### PRUEBA: POST a user
+POST http://localhost:3000/api/users
+content-type: application/json
+
+{
+	"user": {
+		"email": "random@ass.email",
+		"username": "RandomAssUser",
+		"password": "password",
+		"address": "Ohio",
+		"imageUrl": "https://i.blogs.es/d225d6/skibidi-toilet-wiki/500_333.jpeg",
+		"role": "user"
+	}
+}
+
+### Get a user with uuid
+GET http://localhost:3000/api/users/bc634110-30ca-479a-b7dd-ab35ec0fb2b4
+
+### Login
+POST http://localhost:3000/api/users/login
+content-type: application/json
+
+{
+	"email": "random@ass.email",
+	"password": "password"
+}

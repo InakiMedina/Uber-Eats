@@ -1,0 +1,8 @@
+### PRUEBA: GET all products
+GET http://localhost:3000/products
+
+### PRUEBA: GET num 2 to 4 of products
+GET http://localhost:3000/products?range=2:4
+
+### PRUEBA: GET with query
+GET http://localhost:3000/products?queryStr=:Mexican

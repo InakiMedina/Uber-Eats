@@ -78,3 +78,7 @@
   p a:hover {
 	color: #fff;
   }
+
+  #err_msg {
+	color: red;
+  }

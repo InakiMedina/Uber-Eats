@@ -3,17 +3,16 @@
 	
 	<div class="myform bg-dark">
 		<h1 class="text-center">Login</h1>
-		<form action="/home">
 			<div class="mb-3 mt-4">
-				<label for="exampleInputEmail1" class="form-label">Email address</label>
-				<input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+				<label for="email_form" class="form-label">Email address</label>
+				<input type="email" class="form-control" id="email_form" aria-describedby="emailHelp">
 			</div>
 			<div class="mb-3">
-				<label for="exampleInputPassword1" class="form-label">Password</label>
-				<input type="password" class="form-control" id="exampleInputPassword1">
+				<label for="pass_form" class="form-label">Password</label>
+				<input type="password" class="form-control" id="pass_form">
 			</div>
-			<button type="submit" class="btn btn-light mt-3" onClicked="clickLogin()">LOGIN</button>
-			<p>Not a member? <a href="/account/singup">Sign Up now</a></p>
-		</form>
+			<button class="btn btn-light mt-3" onclick="clickLogin()">LOGIN</button>
+			<p id="err_msg"></p>
+			<p>Not a member? <a href="/singup">Sign Up now</a></p>
 	</div>
 </div>	

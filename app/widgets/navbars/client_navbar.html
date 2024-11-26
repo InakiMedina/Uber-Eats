@@ -1,16 +1,11 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
-  <div class="container-fluid">
-    
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+<nav class="navbar navbar-expand-lg navbar-light">
+  <div class="container-fluid d-flex justify-content-between">
+    <a class="navbar-brand" href="/">
+      <img src="../assets/images/logo.png" width="45%" />
+    </a>
+    <div class="navbar-collapse collapse">
       <ul class="navbar-nav">
-        <li class="nav-item ms-2">
-          <a class="navbar-brand" href="/">
-            <img
-              src="../assets/images/logo.png"
-              class="rounded-circle"
-              width="15%"/>
-          </a>
-        </li>
+        <li class="nav-item ms-2"></li>
         <li class="nav-item dropdown ms-2">
           <a
             class="nav-link dropdown-toggle"
@@ -39,34 +34,51 @@
               placeholder="Search"
               aria-label="Search"
             />
-            <button class="btn btn-outline-success" type="submit">Search</button>
+            <button class="btn btn-outline-success" type="submit">
+              Search
+            </button>
           </form>
         </li>
-        <li class="nav-item me-2 py-2 pl-3">
-          <a href="/shopping_cart">
-            <i class="fa-solid fa-cart-shopping navbar-brand"> </i>
+      </ul>
+    </div>
+
+    <div class="">
+      <ul class="navbar-nav d-flex justify-content-end align-items-center">
+        <li class="nav-item">
+          <a href='/shopping_cart' id='sc'>
+            <i class="fa-solid fa-cart-shopping fa-lg"></i>
+            <p id="sc_badge" class="badge badge-secondary">1</p>
           </a>
         </li>
-        <li class="nav-item me-2 py-2 pl-3">
+        <li class="nav-item">
           <a href="/packages">
             <i class="fa-solid fa-truck navbar-brand"> </i>
           </a>
         </li>
-        <li class='nav-item dropdown me-2 py-2 px-3'>
-          <a class="nav-link dropdown-toggle"
+        <li class="nav-item dropdown">
+          <a
+            class="nav-link dropdown-toggle"
             href="#"
             id="navbarDropdown2"
             role="button"
             data-bs-toggle="dropdown"
-            aria-expanded="false">
-              <i class="fa-solid fa-user ms-2"></i>
+            aria-expanded="false"
+          >
+            <i class="fa-solid fa-user ms-2"></i>
           </a>
-          <ul class="dropdown-menu" aria-labelledby="navbarDropdown2">
-            <li><a class="dropdown-item" href="/account/profile"><Strong>PROFILE</Strong></a></li>
-            <li><a class="dropdown-item" href="/account/login"><i class="fa-solid fa-right-from-bracket md-2"> </i></a></li>
+          <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown2">
+            <li>
+              <a class="dropdown-item" href="/profile"
+                ><strong>PROFILE</strong></a
+              >
+            </li>
+            <li>
+              <a class="dropdown-item" href="/login"
+                ><i class="fa-solid fa-right-from-bracket md-2"> </i
+              ></a>
+            </li>
           </ul>
-        </li>       
-        </a>
+        </li>
       </ul>
     </div>
   </div>

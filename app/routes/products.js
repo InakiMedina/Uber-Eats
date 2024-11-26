@@ -4,29 +4,33 @@ const express = require('express')
 
 const router = express.Router()
 
-const { DataHandler } = require('../controllers/data_handler')
+const { DataHandler } = require('../controllers/product_handler')
 const { isTypedArray } = require('util/types')
 
 router.use(cors())
 
+let ProductHandler = new DataHandler()
+
 router.get('/', async (req, res) => {
 	let prods
-	if (Object.hasOwn(req.query, 'queryStr'))
-		prods = await DataHandler.findProducts(req.query.queryStr)
-	if (Object.hasOwn(req.query, 'range'))
-		prods = await DataHandler.findProductsByRange(req.query.range)
-	else
-		prods = await DataHandler.getProducts()
-	return res.send(prods.map(o => o.toJson()))
+	if (Object.hasOwn(req.query, 'queryStr')) {
+		console.log("query")
+		prods = await ProductHandler.findProducts(req.query.queryStr)
+	} else if (Object.hasOwn(req.query, 'range'))
+		prods = await ProductHandler.findProductsByRange(req.query.range)
+	else 
+		prods = await ProductHandler.getProducts()
+	
+	return res.send(prods) //.map(o => o.toJson())
 	
 })
 
 router.use('/size', async (req, res) => {
-	res.send({"size": (await DataHandler.getProdSize())})
+	res.send({"size": (await ProductHandler.getProdSize())})
 })
 
 router.get('/:id', async (req, res) => {
-	res.send((await DataHandler.getProductById(req.params.id)).toJson())
+	res.send((await ProductHandler.getProductById(req.params.id)).toJson())
 })
 
 

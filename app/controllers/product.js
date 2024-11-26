@@ -8,6 +8,7 @@ class ProductException {
 }
 
 class Product {
+
   constructor() {
     this._uuid = utils.generateUUID()
   }

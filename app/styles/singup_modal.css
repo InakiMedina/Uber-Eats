@@ -28,6 +28,7 @@
   padding: 0;
   box-shadow: 12px 12px 12px 0px rgba(0, 0, 0, 0.45);
   border-radius: 10px;
+  min-width: 450px;
   overflow: hidden;
 }
 .carousel .inner {
@@ -49,9 +50,13 @@ h1 {
 }
 
 .sub-forms .sub-form {
-  padding: 0.5rem;
   flex-basis: 100%;
   flex-shrink: 0;
+}
+
+#addr-par {
+  height: 90%;
+  border-radius: 5px;
 }
 
 .myform {
@@ -72,13 +77,12 @@ h1 {
 .form-control {
   background-color: #fff;
   color: #fff;
-  padding-left: 0;
+  padding: 0;
   border: 0;
   border-radius: 0;
   border-bottom: 1px solid #fff;
 }
 .myform .btn {
-  width: 100%;
   font-weight: 800;
   background-color: #fff;
   border-radius: 0;
@@ -90,7 +94,13 @@ h1 {
   border-color: #fff;
 }
 .form-actions {
-  width: fit-content;
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  gap: 8px;
+}
+.form-actions > button {
+  width: 100px;
 }
 .form-step-indicators {
   display: flex;

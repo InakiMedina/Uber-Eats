@@ -1,0 +1,16 @@
+#navbar {
+	background-color: white;
+}
+
+#sc {
+	margin: 10px;
+	position:relative;
+	
+	.badge {
+	  position: absolute;
+	  left: -50%;
+	  top: -50%;
+	  background: red;
+	  font-size: 0.7rem;
+	}
+  }

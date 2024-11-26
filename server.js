@@ -1,7 +1,6 @@
 const express = require('express')
 const app = express()
 const fs = require('fs')
-const products = require('./app/data/products.json')
 const router = require('./app/controllers/router')
 
 const port = 3000

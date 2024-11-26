@@ -1,5 +1,6 @@
-var container = document.getElementById("product_container")
+var container = document.getElementById("product-container")
 var pagination = document.getElementById("pagination")
+var productsSection = document.getElementById("products-section")
 const itemsPerPage = 4
 var currentPage = 0
 var totalPages = 0
@@ -10,7 +11,7 @@ var currentOpenProduct = null
 window.addEventListener("load", (event) => {
 	var xml = new XMLHttpRequest();
 	var items = []
-	xml.open('GET', "http://localhost:3000/products/size")
+	xml.open('GET', "http://localhost:3000/api/products/size")
 	xml.send()
 	xml.onload = function() {
 		if (xml.status != 200)
@@ -26,11 +27,11 @@ window.addEventListener("load", (event) => {
 	
 })
 
-async function addProxyToCart() {
-	
-	await UIStorage.addItem(currentOpenProduct, Number(proxyQuantity.value))
-	
+function enter() {
+	hero.classList.add('hidden')
+	productsSection.classList.remove('hidden')
 }
+
 
 function prodModal(stockQuantity) {
 	dlg.innerHTML = `<div id="productModal" tabindex="-1" role="dialog">
@@ -86,7 +87,7 @@ function showPage() {
 
 	var xml = new XMLHttpRequest();
 	var items = []
-	xml.open('GET', `http://localhost:3000/products?range=${startIndex}:${endIndex}`)
+	xml.open('GET', `http://localhost:3000/api/products?range=${startIndex}:${endIndex}`)
 	xml.send()	
 	var subItems = []
 	xml.onload = function() {
@@ -102,9 +103,10 @@ function showPage() {
 function createPageButtons() {
 	
 	const prevButton = document.createElement('li');
-	const prevLink = document.createElement('a')
+	const prevLink = document.createElement('button')
 	prevLink.classList.add("page-link")
 	prevLink.textContent = "previous"
+
 	prevButton.classList.add("prev-button")
 	prevButton.appendChild(prevLink)
 	pagination.firstElementChild.appendChild(prevButton);
@@ -175,5 +177,9 @@ function makeCard(data) {
 		<p class="card-text">1 ${data.unit} x $${data.pricePerUnit}</p>
 		</div>`
 	return productCard	
+}
+
+function onNavbarLoaded() {
+	updateBadge()
 }
 

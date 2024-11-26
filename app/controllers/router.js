@@ -2,8 +2,12 @@ const express = require('express')
 
 const productRouter = require('../routes/products')
 const adminProductRouter = require('../routes/admin_products')
+const usersRouter = require('../routes/users')
 const widgetsRoutes = require('../routes/widgets')
-const accountRoutes = require('../routes/account')
+const tokenRouter = require('../routes/tokens')
+const loginRoutes = require('../routes/account/login')
+const singupRoutes = require('../routes/account/singup')
+const profileRoutes = require('../routes/account/profile')
 
 const router = express.Router()
 const path = require('path')
@@ -29,10 +33,15 @@ router.use(bodyParser.urlencoded({
     extended: true
 }));
 router.use(bodyParser.json());
-router.use('/products', productRouter)
-router.use('/admin/products', validateAdmin, adminProductRouter)
-router.use('/account', accountRoutes)
+router.use('/api/products', productRouter)
+router.use('/api/admin/products', validateAdmin, adminProductRouter)
+router.use('/api/users', usersRouter)
+router.use('/api/tokens', tokenRouter)
+
 router.use('/widgets', widgetsRoutes)
+router.use('/login', loginRoutes)
+router.use('/singup', singupRoutes)
+router.use('/profile', profileRoutes)
 
 router.get('/', (req, res) => res.sendFile(path.resolve(__dirname + "/../views/home.html")))
 router.get('/home', (req, res) => res.sendFile(path.resolve(__dirname + "/../views/home.html")))

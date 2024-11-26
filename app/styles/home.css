@@ -1,7 +1,29 @@
-#product_container {
+body {
+	background: #eee;
+}
+
+#product-container {
 	columns: 200px 4;
+}
+
+.hidden {
+	display: none;
 }
 
 .card {
 	height: 420px;
 }
+
+#welcome-btn {
+	border: none; 
+	position: absolute; 
+	left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+	background:none;
+	font-size: xx-large;
+	font-weight: bolder;
+	color: white;
+	text-shadow: 3px 3px black;
+}
+

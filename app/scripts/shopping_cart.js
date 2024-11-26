@@ -52,7 +52,7 @@ function summaryListItem(item) {
 
 function delProd(uuid) {
   UIStorage.updateItem(uuid, 0);
-  load()
+  loadSCPage()
 }
 
 function editItem(uuid) {
@@ -65,17 +65,52 @@ function editItem(uuid) {
 function updateAmount() {
 	UIStorage.updateItem(currentItem.productUuid, sc_edit_qty.value)
 	sc_edit.close()
-	load()
+	loadSCPage()
 }
 
-function load() {
+function loadSCPage() {
+  const sc_products = document.getElementById("sc_products")
+
+  if (sc_products) {
+    const storage = UIStorage.storage;
+
+    sc_products.innerHTML = storage.proxies.map(productCard);
+    sc_summary_list.innerHTML = ""
+    storage.proxies.forEach((item) => {
+      sc_summary_list.appendChild(summaryListItem(item));
+    });
+    sc_summary_total.textContent = UIStorage.calculateTotal() + 60;
+
+  }
+  updateBadge()
+
+}
+
+function updateBadge() {
+  
+  const badge = document.getElementById("sc_badge")
+	if (!badge) return
+	
+  
   const storage = UIStorage.storage;
+  const cnt = storage.proxies.length
+  badge.innerText = cnt
+  if (cnt<1) 
+    badge.classList.add('hidden')
+  else 
+    badge.classList.remove('hidden')
 
-  sc_products.innerHTML = storage.proxies.map(productCard);
-  sc_summary_list.innerHTML = ""
-  storage.proxies.forEach((item) => {
-    sc_summary_list.appendChild(summaryListItem(item));
-  });
-  sc_summary_total.textContent = UIStorage.calculateTotal() + 60;
+
 }
-load()
+
+async function addProxyToCart() {
+	
+	await UIStorage.addItem(currentOpenProduct, Number(proxyQuantity.value))
+  updateBadge()
+	
+}
+
+window.addEventListener("load", (event) => {
+  loadSCPage()
+})
+

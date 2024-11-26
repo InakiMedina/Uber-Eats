@@ -8,6 +8,8 @@ window.addEventListener("load", (event) => {
 			alert(xtr.status + ": " + xtr.statusText)
 		else {		
 			navbar.innerHTML = xtr.responseText
+			updateBadge()
 		}
 	}
 })
+
