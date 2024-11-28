@@ -14,6 +14,7 @@ xhr.onload = function() {
 		alert(xhr.status + ": " + xhr.statusText)
 	else {		
 		modal_content.innerHTML = xhr.responseText
+		loadFunctions()
 	}
 }
 
@@ -34,7 +35,7 @@ var subFormsWrapper
 var subForms
 var stepsIndicators
 
-addEventListener("load", (event) => {	
+function loadFunctions() {	
 	parentForm = document.querySelector(".myform");
 	subFormsWrapper = document.querySelector(".myform .carousel .sub-forms");
 	subForms = document.querySelectorAll(".myform .carousel .sub-forms .sub-form");
@@ -55,7 +56,7 @@ addEventListener("load", (event) => {
 		prevStep()
 	});
 
-});
+}
 
 function getSignupData() {
 	return {

@@ -52,5 +52,9 @@ router.get('/', (req, res) => res.sendFile(path.resolve(__dirname + "/../views/h
 router.get('/home', (req, res) => res.sendFile(path.resolve(__dirname + "/../views/home.html")))
 router.get('/shopping_cart', (req, res) => res.sendFile(path.resolve(__dirname + "/../views/shopping_cart.html")))
 router.get('/packages', (req, res) => res.sendFile(path.resolve(__dirname + "/../views/packages.html")))
+router.use('/admin', (req, res) => res.sendFile(path.resolve(__dirname + "/../admin/admin.html")))
+router.use('/users', (req, res) => res.sendFile(path.resolve(__dirname + "/../views/users.html")))
+router.use('/products', (req, res) => res.sendFile(path.resolve(__dirname + "/../views/products.html")))
+router.use('/products/new/form', (req, res) => res.sendFile(path.resolve(__dirname + "/../views/new_product_form.html")))
 
 module.exports = router
