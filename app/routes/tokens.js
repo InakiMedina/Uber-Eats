@@ -17,10 +17,11 @@ router.get('/', async (req, res) => {
 })
 
 router.post('/', async (req, res) => {
+	console.log("hello world")
 	if (!req.body.token) 
 		return res.sendStatus(400)
 	console.log(JSON.stringify(req.body))
-	await TokenHandler.setToken(req.body)
+	TokenHandler.setToken(req.body)
 	return res.sendStatus(200)
 })
 

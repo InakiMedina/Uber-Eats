@@ -3,18 +3,35 @@ POST http://localhost:3000/api/users
 content-type: application/json
 
 {
-	"user": {
-		"email": "random@ass.email",
-		"username": "RandomAssUser",
-		"password": "password",
-		"address": "Ohio",
-		"imageUrl": "https://i.blogs.es/d225d6/skibidi-toilet-wiki/500_333.jpeg",
-		"role": "user"
-	}
+	"email": "random@ass.email",
+	"username": "RandomAssUser",
+	"password": "password",
+	"address": "Ohio",
+	"imageUrl": "https://i.blogs.es/d225d6/skibidi-toilet-wiki/500_333.jpeg",
+	"role": "user"
 }
 
-### Get a user with uuid
-GET http://localhost:3000/api/users/bc634110-30ca-479a-b7dd-ab35ec0fb2b4
+### GET all users
+GET http://localhost:3000/api/users
+
+### GET a user with uuid
+GET http://localhost:3000/api/users/d7cd8205-a92f-4fed-81bd-29b10c134f0f
+
+### DELETE user
+DELETE http://localhost:3000/api/users/63cf7a4c-884e-48e8-8be4-96d75ff3c51c
+
+### PRUEBA: POST a user
+PUT http://localhost:3000/api/users/d7cd8205-a92f-4fed-81bd-29b10c134f0f
+content-type: application/json
+
+{
+	"email": "random@as.email",
+	"username": "RandomAsUser",
+	"password": "password",
+	"address": "Ohio",
+	"imageUrl": "https://i.blogs.es/d225d6/skibidi-toilet-wiki/500_333.jpeg",
+	"role": "user"
+}
 
 ### Login
 POST http://localhost:3000/api/users/login
@@ -23,6 +40,17 @@ content-type: application/json
 {
 	"email": "random@ass.email",
 	"password": "password"
+}
+
+### Signup
+POST http://localhost:3000/api/users/signup
+content-type: application/json
+
+{
+	"email": "inaki.medina@iteso.mx",
+	"username": "Marine Lord",
+	"password": "iteso",
+	"address": "iteso"
 }
 
 ### Get token

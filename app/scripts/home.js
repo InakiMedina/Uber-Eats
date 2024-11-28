@@ -9,27 +9,44 @@ var currentOpenProduct = null
 
 
 window.addEventListener("load", (event) => {
-	var xml = new XMLHttpRequest();
-	var items = []
-	xml.open('GET', "http://localhost:3000/api/products/size")
-	xml.send()
-	xml.onload = function() {
-		if (xml.status != 200)
-			alert(xml.status + ": " + xml.statusText)
-		else {		
-			totalItems = JSON.parse(xml.responseText).size
-			totalPages = Math.ceil(totalItems / itemsPerPage);
-			createPageButtons()
-			showPage()
-		}
-	}
-
+	getSize()
+	showLoading(false)
+	createPageButtons()
 	
 })
 
-function enter() {
+async function getSize()  {
+	return new Promise(function (resolve, reject) {
+		var xml = new XMLHttpRequest();
+		xml.open('GET', "http://localhost:3000/api/products/size")
+		xml.onload = function() {
+			if (xml.status != 200)
+				reject({
+                    status: this.status,
+                    statusText: "size not found"
+                });
+			else {		
+				totalItems = JSON.parse(xml.responseText).size
+				totalPages = Math.ceil(totalItems / itemsPerPage);
+				resolve(xml.response);
+			}
+		}
+		xml.send()
+    });
+	
+}
+
+function showLoading(show) {
+	if (show)
+	  loading.classList.remove('hidden') 
+	else
+	  loading.classList.add('hidden')
+  }
+
+function showProducts() {
 	hero.classList.add('hidden')
-	productsSection.classList.remove('hidden')
+	showLoading(true)
+	showPage()
 }
 
 
@@ -79,29 +96,34 @@ function addCards(subItems) {
 	})
 }
 
-function showPage() {
+async function showPage() {
+	await getSize()
+
 	var startIndex = currentPage * itemsPerPage
 	var endIndex = startIndex + itemsPerPage
 	if (endIndex > totalItems)
 		endIndex = totalItems
 
 	var xml = new XMLHttpRequest();
-	var items = []
 	xml.open('GET', `http://localhost:3000/api/products?range=${startIndex}:${endIndex}`)
 	xml.send()	
 	var subItems = []
 	xml.onload = function() {
 		if (xml.status != 200)
 			alert(xml.status + ": " + xml.statusText)
-		else {		
+		else {				
+			showLoading(false)
+			productsSection.classList.remove('hidden')
 			subItems = [...JSON.parse(xml.responseText)]
 			addCards(subItems)			
 			updateActiveButtonStates()
 		}
 	}
 }
-function createPageButtons() {
+async function createPageButtons() {
 	
+	await getSize()
+
 	const prevButton = document.createElement('li');
 	const prevLink = document.createElement('button')
 	prevLink.classList.add("page-link")

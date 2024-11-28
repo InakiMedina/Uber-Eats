@@ -1,8 +1,50 @@
 ### PRUEBA: GET all products
-GET http://localhost:3000/products
+GET http://localhost:3000/api/products
 
 ### PRUEBA: GET num 2 to 4 of products
-GET http://localhost:3000/products?range=2:4
+GET http://localhost:3000/api/products?range=2:4
 
 ### PRUEBA: GET with query
-GET http://localhost:3000/products?queryStr=:Mexican
+GET http://localhost:3000/api/products?queryStr=Tiramisu:
+
+### CREATE product
+POST http://localhost:3000/api/admin/products
+content-type: application/json
+
+{
+	"x-auth": "admin",
+	"product": {
+		"title": "Tiramisu",
+		"description": "lit el postre mas rico",
+		"imageUrl": "https://images.ctfassets.net/0e6jqcgsrcye/4n65BLblai3S8LPjwpHKMm/b31817cdecfe982fe798642d1c12d525/tiramisu_thumbnail.jpg",
+		"unit": "plato",
+		"stock": 456,
+		"pricePerUnit": 2,
+		"category": "Italian"
+	}
+}
+
+###  DELETE product
+DELETE  http://localhost:3000/api/admin/products/8e572ebb-7860-4d93-9112-a911db0839bc
+content-type: application/json
+
+{
+	"x-auth": "admin"
+}
+
+### UPDATE product
+PUT http://localhost:3000/api/admin/products/b1d6f5df-9bdd-4ff8-bb42-101dd47945fe
+content-type: application/json
+
+{
+	"x-auth": "admin",
+	"product": {
+		"title": "Tiramisu",
+		"description": "lit el postre menos rico",
+		"imageUrl": "https://images.ctfassets.net/0e6jqcgsrcye/4n65BLblai3S8LPjwpHKMm/b31817cdecfe982fe798642d1c12d525/tiramisu_thumbnail.jpg",
+		"unit": "plato",
+		"stock": 456,
+		"pricePerUnit": 2,
+		"category": "Italian"
+	}
+}

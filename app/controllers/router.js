@@ -27,6 +27,11 @@ function validateAdmin (req, res, next) {
 	else 
 		res.sendStatus(401)
 }
+
+// function validateToken (req, res, next) {
+	
+// }
+
 app.use(router)
 app.use(express.json())
 router.use(bodyParser.urlencoded({

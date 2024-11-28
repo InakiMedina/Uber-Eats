@@ -3,6 +3,7 @@ const fs = require('fs')
 const { Product } = require('./product')
 const {productSchema} = require('../data/products_schema')
 const mongoose = require('mongoose')
+const { NULL } = require('node-sass')
 
 class DataHandler {
 
@@ -22,8 +23,7 @@ class DataHandler {
 	}
 
 	async getProducts() {
-		var p = await this.ProductM.find({})
-		return p
+		return await this.ProductM.find({})
 	}
 
 	async getProductById(uuid) {
@@ -32,33 +32,33 @@ class DataHandler {
 
 	async createProduct(json) {
 		const newProd = Product.createFromJson(json)
-		await this.getProducts()
-		const existingProd = this._products.find(p => p.uuid == newProd.uuid)
-		if (existingProd)
-			return existingProd
-		this._products.push(newProd)
-		await this._storeProducts()
-		return newProd
+		
+		let user = this.ProductM(newProd.toJson())
+		await user.save()
+		return user
 	}
 
 	async updateProduct(uuid, json) {
-		let index = (await this.getProducts()).findIndex((p) => p.uuid == uuid)
-		const newJson = {...json, uuid}
-		if (index < 0)
+		json.uuid = uuid
+		const newProd = Product.createFromJson(json)
+		
+		const existingProd = await this.getProductById(uuid)
+		console.log(existingProd)
+		if (!existingProd)
 			return null
-		this._products[index].setJson(newJson)
-		await this._storeProducts()
-		return this._products[index]
+
+
+		await this.db.collection('products').updateOne({uuid: newProd.uuid}, {$set: newProd.toJson()})
 	}
 
 	async deleteProduct(uuid) {
-		const index = (await this.getProducts()).findIndex((p) => p.uuid == uuid)
-		if (index < 0)
+		const existingProd = this.ProductM.findOne({uuid: uuid})
+		if (!existingProd)
 			return null
-		const delProd = this._products[index]
-		this._products.splice(index, 1)
-		await this._storeProducts()
-		return delProd
+		
+
+		this.db.collection('products').deleteOne({uuid: uuid})
+		return existingProd
 	}
 
 	async findByTitle(title) {	
@@ -82,7 +82,6 @@ class DataHandler {
 		if (vals[0] == "")
 			return await this.findByCategory(vals[1])
 
-		console.log('here')
 		return await this.findByBoth(vals[0], vals[1])
 	}
 

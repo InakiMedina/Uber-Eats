@@ -13,11 +13,10 @@ let ProductHandler = new DataHandler()
 
 router.get('/', async (req, res) => {
 	let prods
-	if (Object.hasOwn(req.query, 'queryStr')) {
-		console.log("query")
+	if (Object.hasOwn(req.query, 'queryStr')) 
 		prods = await ProductHandler.findProducts(req.query.queryStr)
-	} else if (Object.hasOwn(req.query, 'range'))
-		prods = await ProductHandler.findProductsByRange(req.query.range)
+	else if (Object.hasOwn(req.query, 'range')) 
+		prods = await ProductHandler.findProductsByRange(req.query.range) 	
 	else 
 		prods = await ProductHandler.getProducts()
 	

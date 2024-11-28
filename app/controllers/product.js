@@ -44,7 +44,21 @@ class Product {
     const newProd = new Product()
     //validate by setting properties to a dummy
     newProd.setJson(json)
-    if (json.uuid) newProd.uuid == json.uuid
+    // if (!newProd.title)
+    //   return false
+    // if (!newProd.description)
+    //   return false
+    // if (!newProd.imageUrl)
+    //   return false
+    // if (!newProd.unit)
+    //   return false
+    // if (!newProd.stock)
+    //   return false
+    // if (!newProd.pricePerUnit)
+    //   return false
+    // if (!newProd.category)
+    //   return false
+    // return true
   }
 
   static createFromJson(json, withUnderscore) {

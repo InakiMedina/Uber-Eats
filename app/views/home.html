@@ -106,11 +106,15 @@
           <span class="visually-hidden">Next</span>
         </button>
       </div>
-      <button id="welcome-btn" onClick='enter()'>
+      <button id="welcome-btn" onClick='showProducts()'>
         Check out our Menu!
       </button>
     </div>
-    <section id="products-section" class='hidden'>
+    <div class='hidden' id="loading">
+      <script src="https://unpkg.com/@dotlottie/player-component@2.7.12/dist/dotlottie-player.mjs" type="module"></script>
+      <dotlottie-player src="https://lottie.host/753d8f79-4710-45da-8d54-2c226f9b1b2c/Aou6OxYodl.lottie" background="transparent" speed="1" style="width: 300px; height: 300px" loop autoplay></dotlottie-player>
+    </div>
+    <section id="products-section" class='hidden mt-3'>
       <div id="product-container" class="container"></div>
       <nav
         id="pagination"

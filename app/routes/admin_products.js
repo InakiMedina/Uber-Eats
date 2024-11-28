@@ -17,7 +17,7 @@ router.post("/", async (req, res) => {
 
   const newProd = await ProductHandler.createProduct(req.body.product);
 
-  return res.status(200).send(newProd.toJson());
+  return res.status(200).send(newProd);
 });
 
 router.put("/:id", async (req, res) => {

@@ -18,11 +18,34 @@ class UserHandler {
 		return newUser.uuid
 	}
 
-	async getUserById(id) {
-		return await(this.UserM.findOne({"uuid": id}))
+	async getUsers() {
+		return await(this.UserM.findOne({}))
+	}
+
+	async getUserById(uuid) {
+		return await(this.UserM.findOne({uuid}))
 	}
 	async getUserByEmail(email) {
 		return await(this.UserM.findOne({email}))
+	}
+
+	async deleteUser(uuid) {
+		const existingUser = await this.getUserById(uuid)
+		if (!existingUser)
+			return null
+
+		await this.db.collection("users").deleteOne({uuid})
+		return existingUser
+	}
+
+	async updateUser(uuid, json) {
+		const existingUser = await this.getUserById(uuid)
+		if (!existingUser)
+			return null
+
+		json.uuid = uuid
+		await this.db.collection("users").updateOne({uuid}, {$set: json})
+		return json
 	}
 }
 

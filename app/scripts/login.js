@@ -53,19 +53,19 @@ function checkEmptysubForm(){
 
 function storeToken(token) {
 	var xhr4 = new XMLHttpRequest()
-	let inputToken = {"token": token.inputToken}
+	let inputToken = {"token": JSON.parse(token).accessToken}
 	xhr4.open('POST', "http://localhost:3000/api/token")
 	xhr4.setRequestHeader("content-type", "application/json")
 	xhr4.send(JSON.stringify(inputToken))
-	xhr4.onload = function() {
-		if (xhr4.status != 200)
+	return xhr4.onload = function() {
+		if (xhr4.status != 200) {
 			alert("token wasn't able to store")
-		else {	
-			return true
+			return false
 		}
+		else 
+			return true
 	}
 	
-	return false
 }
 
 function loginUser(){
@@ -80,8 +80,11 @@ function loginUser(){
 			err_msg.innerHTML = "wrong login info"
 		else {	
 			err_msg.innerHTML = ""	
-			if (storeToken(xhr3.responseText))
-				window.location.href = "home"
+			const bool = storeToken(xhr3.responseText)
+			console.log(bool)
+			if (bool) {
+				window.location.href = "/home"
+			}
 		}
 	}
 }
